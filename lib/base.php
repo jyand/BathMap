@@ -41,26 +41,6 @@ function useradd($email, $password, $confirm) {
                 return FALSE ;
         }
 }
-# query the database for results based on search terms in forms
-# a keyword search with one or more characters can be used for the business
-# the zip code must be set to obtain results
-function dbsearch($bname, $zip) {
-include_once("cred.php");
-        $conn = new mysqli($host, $user, $pass, $db);
-        if ($conn->connect_error) {
-                die('<p class="error">sorry!</p>') ;
-                echo "<p>we are having connection issues.</p><p>please try again later.</p>" ;
-        }
-        else {
-                $mysql = "SELECT * FROM Zip WHERE Name = '{$zip}'" ;
-        }
-        if (strlen($bname) > 0) {
-                $term = preg_replace("/ /", "%", $bname) ;
-                $term = "%" . $term . "%" ;
-                $mysqlstr .= " AND Name LIKE '{$bname}'" ;
-        }
-        return $conn->query($mysqlstr) ;
-}
 
 # inserts record into the database when a user posts a review
 # the html forms are all required so this ensures that no forms are blank
@@ -74,20 +54,6 @@ function postreview($name, $address, $city, $zip) {
         else {
                 $mysqlstr = "INSERT INTO Business (Name, Address, City, Zip, State) VALUES('{$name}', '{$address}', '{$city}', '{$zip}', 'NJ'" ;
                 $conn->query($mysqlstr) ;
-        }
-}
-
-# dbconnect() is an unused function since it ended up being more efficient to just connect to the database when needed
-function dbconnect() {
-include_once("cred.php");
-        $conn = new mysqli($host, $user, $pass, $db);
-        if ($conn->connect_error) {
-                die('<p class="error">sorry!</p>') ;
-                echo "<p>we are having connection issues.</p><p>please try again later.</p>" ;
-                return false ;
-        }
-        else {
-                return TRUE ;
         }
 }
 
