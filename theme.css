@@ -1,0 +1,29 @@
+header{
+        text-align: center ;
+        color: #ffff07 ;
+        font-size: 40px ;
+}
+footer{
+        text-align: center ;
+        color: #ffffff ;
+        font-size: 20px ;
+}
+p{
+        text-align: center ;
+        color: #ffffff ;
+        font-size: 40px ;
+}
+form{
+        text-align: center ;
+}
+body{
+        background: #000000 ;
+}
+ul{
+        text-align: left ;
+        color: #ffff07 ;
+        font-size: 30px ;
+}
+img{
+        float:center ;
+}
