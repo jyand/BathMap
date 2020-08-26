@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="utf-8"/>
+        <title>Rest Stop</title>
+        <link href="theme.css" rel=stylesheet type="text/css">
+</head>
+<body>
+        <nav><ul>
+                <a href="signin.php">Sign In</a>
+                <a href="signup.php">Create Account</a>
+        </ul></nav></br>       
+        <header><h1>Find a Public Bathroom</h1></header>
+        <main>
+<script type="text/javascript">
+// checks for valid zip code input
+function validform(){
+        var z = document.forms["search"]["zip"].value ;
+        if (z > 99999 || z < 0) {
+                alert("Invalid zip code!") ;
+                return false ;
+        }
+}
+</script>
+                <form name="search" method="GET" action="search.php" onsubmit="return validform()">
+                <label for="search">
+                        <p>Store Name: <input type="text" id="bname" name="bname">
+                        Zip Code: <input type="number" id="zip" name="zip" required></p>
+                        <p><input type="submit" value="search your location"></p>
+                </label>
+                </form></br>
+                <p><img src="img/br.jpeg" width="170" height="200"></p>
+        </main>
+        <footer>&copy;Copyright 2020 - John DeSalvo</footer>
+</body>
+</html>

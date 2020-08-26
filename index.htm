@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="utf-8"/>
+        <title>BathMap</title>
+        <link href="theme/index.css" rel="stylesheet" type="text/css"></link>
+</head>
+<body>
+<nav><ol>
+        <a href="">Sign In</a></br>
+        <a href="">Sign Up</a>
+</ol></nav>
+<header>
+        <h1>BathMap</h1>
+        <p>Find a local restroom in a hurry!</p>
+</header>
+<main>
+<script type="text/javascript" src="scripts/searchcheck.js">
+</script>
+                <form name="search" method="GET" action="lib/search" onsubmit="return validform()">
+                <label for="search">
+                        <p>Store Name: <input type="text" id="bname" name="bname">
+                        Zip Code: <input type="number" id="zip" name="zip" required></p>
+                        <p><input type="submit" value="search your location"></p>
+                </label>
+                </form></br>
+</main>
+<footer>&copy;Copyright 2020 - John DeSalvo</footer>
+</body>
+</html>

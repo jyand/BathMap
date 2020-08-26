@@ -1,0 +1,53 @@
+body {
+        background-color: #002b36 ;
+        text-decoration: none ;
+}
+
+main {
+        color: #fdf6e3 ;
+        padding-left: 160px ;
+}
+
+header {
+        color: #dc322f ;
+        background-color: #073642 ;
+        padding-left: 160px ;
+        height: 100px ;
+}
+
+nav {
+        height: 100% ;
+        width: 144px ;
+        top: 0 ;
+        left: 0 ;
+        position: fixed ;
+	background-color: #586e75 ;
+        color: #cb4b16 ;
+	overflow: hidden;
+}
+
+footer {
+        color: #93a1a1 ;
+        background-color: #073642 ;
+        padding-left: 160px ;
+        text-align: center ;
+}
+
+h1 {
+        font-size: 24px ;
+}
+
+a {
+        color: #d3c22f ;
+}
+
+table, tr, td {
+        border-style: solid ;
+        border-color: #000000 ;
+        border-width: 4px ;
+        text-align: center ;
+        float: center ;
+}
+thead {
+        font-weight: bold ;
+}
