@@ -7,7 +7,7 @@ import (
         "log"
         "database/sql"
 //        "strconv"
-//        "strings"
+        "strings"
         _"github.com/lib/pq"
 )
 
@@ -25,7 +25,6 @@ type Store struct {
         address string
         zip string
         haspublic string
-        storeid int
 }
 
 func checkerror(err error) {
@@ -84,6 +83,14 @@ func search_storename(name string) ([]string, []string, string) {
         return names, nums, query
 }
 
-//func new_entry(name string, storenum int, address string, zip string, haspublic bool) { 
-        //query := "INSERT INTO store VALUES "
-//}
+func new_entry(name string, storenum string, address string, zip string, haspublic string) (int64, error) {
+        conn := fmt.Sprintf("host=%s port=%d user=%s password=%s dbname=%s sslmode=disable", host, port, user, password, dbname)
+        db, err := sql.Open("postgres", conn)
+        checkerror(err)
+        defer db.Close()
+
+        str := []string{name, storenum, address, zip, haspublic}
+        query := "INSERT INTO store VALUES (" + strings.Join(str, ", ") + ")"
+        result, err := db.Exec(query)
+        return result.RowsAffected()
+}

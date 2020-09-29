@@ -41,7 +41,7 @@ func main() {
 
         var result Store
         query := "SELECT name, storenum FROM store WHERE haspublic = TRUE"
-        err = db.QueryRow(query).Scan(&result.name, &result.storenum)
+        result, err = db.Exec(query).Scan(&result.name, &result.storenum)
 
         if err == nil {
                 fmt.Println("Store:", result.name, result.storenum)
